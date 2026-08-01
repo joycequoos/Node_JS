@@ -1,6 +1,6 @@
 # Node.js API — DevHouse
 
-[← Voltar](https://github.com/JosiTubaroski/DataScience/blob/main/README.md)
+[← Voltar](https://github.com/joycequoos/DataScience/blob/main/README.md)
 
 API REST desenvolvida em Node.js, utilizando Express para o servidor HTTP e MongoDB (via Mongoose) como banco de dados. O projeto expõe rotas de autenticação (sessões) e de cadastro de imóveis, incluindo upload de imagem de capa.
 
