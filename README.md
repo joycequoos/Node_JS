@@ -1,52 +1,52 @@
 # Node.js API — DevHouse
 
-[← Voltar](https://github.com/joycequoos/Development)
+[← Back](https://github.com/joycequoos/Development)
 
-API REST desenvolvida em Node.js, utilizando Express para o servidor HTTP e MongoDB (via Mongoose) como banco de dados. O projeto expõe rotas de autenticação (sessões) e de cadastro de imóveis, incluindo upload de imagem de capa.
+REST API developed in Node.js, using Express for the HTTP server and MongoDB (via Mongoose) as the database. The project exposes authentication (session) routes and property registration routes, including cover image upload.
 
-## Sobre o Projeto
+## About the Project
 
-Esta API serve como back-end para uma aplicação de listagem de imóveis (**DevHouse**), permitindo:
+This API serves as the back end for a property-listing application (**DevHouse**), allowing:
 
-- **Autenticação de sessão** — rota para login/autenticação de usuários.
-- **Cadastro de imóveis** — rota para criar um novo imóvel, com upload de uma imagem de thumbnail (miniatura).
+- **Session authentication** — a route for user login/authentication.
+- **Property registration** — a route to create a new property, with the upload of a thumbnail image.
 
-## Tecnologias Utilizadas
+## Technologies Used
 
-| Tecnologia | Função no Projeto |
+| Technology | Role in the Project |
 |---|---|
-| **Node.js** | Ambiente de execução JavaScript no servidor. |
-| **Express** | Framework para criação do servidor HTTP e das rotas da API. |
-| **Mongoose** | Biblioteca para modelagem de dados e conexão com o MongoDB. |
-| **Multer** | Middleware para upload de arquivos (imagens de imóveis). |
+| **Node.js** | JavaScript runtime environment on the server. |
+| **Express** | Framework for creating the HTTP server and the API routes. |
+| **Mongoose** | Library for data modeling and connecting to MongoDB. |
+| **Multer** | Middleware for file uploads (property images). |
 
-## Estrutura de Arquivos
+## File Structure
 
-| Arquivo | Descrição |
+| File | Description |
 |---|---|
-| [server.js](https://github.com/joycequoos/Node_JS/blob/main/server.js) | Ponto de entrada da aplicação — inicia o servidor na porta `3333`. |
-| [app.js](https://github.com/joycequoos/Node_JS/blob/main/app.js) | Configuração principal da aplicação: conexão com o MongoDB, middlewares e carregamento das rotas. |
-| [routes.js](https://github.com/joycequoos/Node_JS/blob/main/routes.js) | Definição das rotas da API e seus respectivos controllers. |
+| [server.js](https://github.com/joycequoos/Node_JS/blob/main/server.js) | The application's entry point — starts the server on port `3333`. |
+| [app.js](https://github.com/joycequoos/Node_JS/blob/main/app.js) | Main application configuration: MongoDB connection, middlewares, and route loading. |
+| [routes.js](https://github.com/joycequoos/Node_JS/blob/main/routes.js) | Definition of the API routes and their respective controllers. |
 
-## Rotas da API
+## API Routes
 
-| Método | Rota | Descrição |
+| Method | Route | Description |
 |---|---|---|
-| `POST` | `/sessions` | Autentica um usuário (login). |
-| `POST` | `/houses` | Cadastra um novo imóvel, recebendo a imagem de thumbnail via upload (`multipart/form-data`). |
+| `POST` | `/sessions` | Authenticates a user (login). |
+| `POST` | `/houses` | Registers a new property, receiving the thumbnail image via upload (`multipart/form-data`). |
 
-## Como Executar
+## How to Run
 
 ```bash
-# instalar as dependências
+# install the dependencies
 npm install
 
-# iniciar o servidor
+# start the server
 node server.js
 ```
 
-O servidor ficará disponível em `http://localhost:3333`.
+The server will be available at `http://localhost:3333`.
 
-## Observação sobre Segurança
+## Security Note
 
-O arquivo `app.js` atualmente contém a string de conexão do MongoDB (usuário e senha) diretamente no código. Para projetos em produção, o recomendado é mover essas credenciais para variáveis de ambiente (por exemplo, usando um arquivo `.env` com a biblioteca `dotenv`), evitando expor dados sensíveis no repositório.
+The `app.js` file currently contains the MongoDB connection string (username and password) directly in the code. For production projects, it's recommended to move these credentials to environment variables (for example, using a `.env` file with the `dotenv` library), avoiding exposing sensitive data in the repository.
